@@ -3,4 +3,6 @@ exec 2>&1
 
 export JAVA_HOME="{{pkgPathFor "core/jre8"}}"
 export JBOSS_HOME="{{pkg.svc_var_path}}"
-exec $JBOSS_HOME/bin/standalone.sh --server-config=wildfly.xml
+exec $JBOSS_HOME/bin/standalone.sh -b {{cfg.jboss.bindaddress}} -bmanagement {{cfg.jboss.bindaddressmanagment}} -Djboss.http.port={{cfg.jboss.httpport}} -Djboss.https.port={{cfg.jboss.httpsport}}
+
+#--server-config=wildfly.xml
