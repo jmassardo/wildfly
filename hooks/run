@@ -1,9 +1,6 @@
 #!/bin/sh
-
 exec 2>&1
 
 export JAVA_HOME="{{pkgPathFor "core/jre8"}}"
-
-#export JBOSS_HOME="{{pkg.path}}"
 export JBOSS_HOME="{{pkg.svc_var_path}}"
 exec $JBOSS_HOME/bin/standalone.sh --server-config=wildfly.xml

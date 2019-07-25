@@ -19,7 +19,6 @@ do_install() {
   build_line "Performing install"
   mkdir -p "${pkg_prefix}/wildfly"
   cp -R $HAB_CACHE_SRC_PATH/$pkg_name-$pkg_version.Final/* "${pkg_prefix}/wildfly"
-  #cp -vR $HAB_CACHE_SRC_PATH/$pkg_name-$pkg_version.Final/* "${pkg_prefix}/"
 
   # default permissions included in the tarball don't give any world access
   find "${pkg_prefix}/wildfly" -type d -exec chmod -v 755 {} +

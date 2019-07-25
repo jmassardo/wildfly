@@ -1,8 +1,2 @@
-#ln -s {{pkg.svc_var_path}} {{pkg.path}}/standalone/data
-
-#ln -s {{pkg.svc_var_path}} {{pkg.path}}/standalone/log
-
-#rm {{pkg.path}}/standalone/configuration/standalone.xml
-#ln -s {{pkg.svc_config_path}}/wildfly.xml {{pkg.path}}/standalone/configuration/wildfly.xml
 cp -R {{pkg.path}}/wildfly/* {{pkg.svc_var_path}}
 cp {{pkg.svc_config_path}}/wildfly.xml {{pkg.svc_var_path}}/standalone/configuration/wildfly.xml
