@@ -20,6 +20,9 @@ do_install() {
   mkdir -p "${pkg_prefix}/wildfly"
   cp -R $HAB_CACHE_SRC_PATH/$pkg_name-$pkg_version.Final/* "${pkg_prefix}/wildfly"
 
+  # Clear out the conf file so Hab can replace it at runtime
+  rm "${pkg_prefix}/wildfly/bin/standalone.conf"
+
   # default permissions included in the tarball don't give any world access
   find "${pkg_prefix}/wildfly" -type d -exec chmod -v 755 {} +
   find "${pkg_prefix}/wildfly" -type f -exec chmod -v 644 {} +
