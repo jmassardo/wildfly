@@ -1,2 +1,2 @@
 cp -R {{pkg.path}}/wildfly/* {{pkg.svc_var_path}}
-#cp {{pkg.svc_config_path}}/wildfly.xml {{pkg.svc_var_path}}/standalone/configuration/wildfly.xml
+cp {{pkg.svc_config_path}}/wildfly.xml {{pkg.svc_var_path}}/standalone/configuration/wildfly.xml
