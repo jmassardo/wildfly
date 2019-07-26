@@ -12,8 +12,8 @@ pkg_description="WildFly is a flexible, lightweight, managed application runtime
 pkg_upstream_url="https://wildfly.org"
 
 pkg_exports=(
-  [httpport]=httpport
-  [httpsport]=httpsport
+  [httpport]=jboss.httpport
+  [httpsport]=jboss.httpsport
 )
 
 pkg_exposes=(httpport httpsport)
