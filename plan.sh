@@ -11,6 +11,10 @@ pkg_bin_dirs=(bin)
 pkg_description="WildFly is a flexible, lightweight, managed application runtime that helps you build amazing applications."
 pkg_upstream_url="https://wildfly.org"
 
+pkg_exports=(
+  [httpport]=cfg.httpport
+  [httpsport]=cfg.httpsport
+)
 do_build() {
   return 0
 }
