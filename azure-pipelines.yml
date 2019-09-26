@@ -6,7 +6,7 @@ stages:
   jobs:
   - job: Build
     pool:
-      name: ubuntu-16.04
+      name: 'Ubuntu 16.04'
     continueOnError: true
     steps:
     - task: vsts-habitat-install@3
@@ -31,7 +31,7 @@ stages:
   jobs:
   - deployment: deployment
     pool:
-      name: ubuntu-16.04
+      name: 'Ubuntu 16.04'
     environment: 'dev'
     strategy:
       runOnce:
@@ -59,7 +59,7 @@ stages:
   jobs:
   - deployment: deployment
     pool:
-      name: ubuntu-16.04
+      name: 'Ubuntu 16.04'
     environment: 'stg'
     strategy:
       runOnce:
@@ -81,7 +81,7 @@ stages:
   jobs:
   - deployment: deployment
     pool:
-      name: ubuntu-16.04
+      name: 'Ubuntu 16.04'
     environment: 'prod'
     strategy:
       runOnce:
