@@ -3,6 +3,7 @@ services:
   - docker:dind
 
 before_script:
+  - apt install -y curl
   - curl https://raw.githubusercontent.com/habitat-sh/habitat/master/components/hab/install.sh | sudo bash
   - hab license accept
 
