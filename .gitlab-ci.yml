@@ -1,4 +1,4 @@
-image: "habitat/default-studio-x86_64-linux"
+image: "ubuntu"
 services:
   - docker:dind
 
