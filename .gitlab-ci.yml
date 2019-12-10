@@ -7,6 +7,8 @@ before_script:
   - apt-get install -y curl wget
   - curl https://raw.githubusercontent.com/habitat-sh/habitat/master/components/hab/install.sh | bash
   - hab license accept
+  - echo $sig | base64 -D > /hab/cache/keys/jmassardo-20171014002439.pub
+  - echo $key | base64 -D > /hab/cache/keys/jmassardo-20171014002439.sig.key
 
 stages:
   - test
