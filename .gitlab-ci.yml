@@ -5,7 +5,7 @@ services:
 before_script:
   - apt-get update
   - apt-get install -y curl wget
-  - curl https://raw.githubusercontent.com/habitat-sh/habitat/master/components/hab/install.sh | sudo bash
+  - curl https://raw.githubusercontent.com/habitat-sh/habitat/master/components/hab/install.sh | bash
   - hab license accept
 
 stages:
