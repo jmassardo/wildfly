@@ -16,7 +16,8 @@ stages:
   - test
   - build
   - publish
-  - promote
+  - promote_stg
+  - promote_prod
 
 lint:
   stage: test
@@ -42,3 +43,22 @@ publish_artifact:
     - source results/last_build.env
     - hab pkg upload results/$pkg_artifact
 
+promote_stg:
+  stage: promote_stg
+  artifacts:
+    paths:
+      - results/
+  script:
+    - source results/last_build.env
+    - hab pkg promote $pkg_ident stg
+  when: manual
+
+promote_prod:
+  stage: promote_prod
+  artifacts:
+    paths:
+      - results/
+  script:
+    - source results/last_build.env
+    - hab pkg promote $pkg_ident prod
+  when: manual
