@@ -27,7 +27,7 @@ create_artifact:
   stage: build
   artifacts:
     paths:
-      - habitat/results/
+      - results/
   script:
     - hab pkg build habitat/.
     - pwd
@@ -37,8 +37,8 @@ publish_artifact:
   stage: publish
   artifacts:
     paths:
-      - habitat/results/
+      - results/
   script:
-    - source habitat/results/last_build.env
-    - hab pkg upload habitat/results/$pkg_artifact
+    - source results/last_build.env
+    - hab pkg upload results/$pkg_artifact
 
