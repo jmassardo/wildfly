@@ -30,7 +30,7 @@ create_artifact:
     - hab pkg build habitat/.
 
 publish_artifact:
-  stage: build
+  stage: publish
   script:
     - source habitat/results/last_build.env
     - hab pkg upload habitat/results/$pkg_artifact
