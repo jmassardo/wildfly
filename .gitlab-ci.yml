@@ -33,6 +33,9 @@ create_artifact:
 
 publish_artifact:
   stage: publish
+  artifacts:
+    paths:
+      - habitat/results/
   script:
     - source habitat/results/last_build.env
     - hab pkg upload habitat/results/$pkg_artifact
