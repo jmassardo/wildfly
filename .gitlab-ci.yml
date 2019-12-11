@@ -25,6 +25,9 @@ lint:
 
 create_artifact:
   stage: build
+  artifacts:
+    paths:
+      - habitat/results/
   script:
     - hab pkg build habitat/.
 
