@@ -10,8 +10,7 @@ before_script:
   - echo $sig | base64 -d > /hab/cache/keys/jmassardo-20171014002439.pub
   - echo $key | base64 -d > /hab/cache/keys/jmassardo-20171014002439.sig.key
   - mkdir - p /hab/etc
-  - echo $cli > /hab/etc/cli.toml
-  - cat /hab/etc/cli.toml
+  - echo $cli | base64 -d > /hab/etc/cli.toml
 
 stages:
   - test
