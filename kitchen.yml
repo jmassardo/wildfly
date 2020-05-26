@@ -1,0 +1,28 @@
+driver:
+  name: vagrant
+  customize:
+    memory: 2048
+
+verifier:
+  name: inspec
+
+provisioner:
+  name: habitat
+  hab_version: 'latest'
+  hab_license: accept
+
+platforms:
+  - name: ubuntu
+    driver:
+      box: bento/ubuntu-18.04
+    provisioner:
+      package_origin: jmassardo
+      package_name: wildfly
+      results_directory: results
+      install_latest_artifact: true
+
+suites:
+  - name: default
+    verifier:
+      inspec_tests:
+        - tests

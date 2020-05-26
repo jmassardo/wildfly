@@ -31,8 +31,6 @@ create_artifact:
       - results/
   script:
     - hab pkg build habitat/.
-    - pwd
-    - ls
 
 publish_artifact:
   stage: publish
