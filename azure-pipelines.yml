@@ -31,7 +31,7 @@ stages:
   jobs:
   - deployment: deployment
     pool:
-      vmImage: 'Ubuntu 16.04'
+      vmImage: 'Ubuntu 20.04'
     environment: 'dev'
     strategy:
       runOnce:
